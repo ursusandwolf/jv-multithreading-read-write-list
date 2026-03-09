@@ -33,13 +33,11 @@ public class ReadWriteList<E> {
     }
 
     public int size() {
-        int i = 0;
         rl.lock();
         try {
             return list.size();
         } finally {
             rl.unlock();
-            return i;
         }
     }
 }
